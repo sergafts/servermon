@@ -4,3 +4,4 @@ south
 whoosh
 ipy
 python-ldap
+djangorestframework==2.4.1
