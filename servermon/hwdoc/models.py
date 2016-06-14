@@ -330,7 +330,7 @@ class Equipment(models.Model):
 
     model = models.ForeignKey(EquipmentModel)
     allocation = models.ForeignKey(Project, null=True, blank=True)
-    serial = models.CharField(max_length=80)
+    serial = models.CharField(max_length=80, unique=True)
     rack = models.ForeignKey(Rack, null=True, blank=True)
     unit = models.PositiveIntegerField(null=True, blank=True)
     purpose = models.CharField(max_length=80, blank=True)
@@ -384,6 +384,7 @@ class ServerManagement(models.Model):
         ('ilo2', 'HP iLO 2'),
         ('ilo3', 'HP iLO 3'),
         ('irmc', 'Fujitsu iRMC'),
+        ('idrac', 'Dell iDRAC'),
         ('ipmi', 'Generic IPMI'),
         ('dummy', 'Dummy Method Backend'),
     )
